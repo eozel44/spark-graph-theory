@@ -11,6 +11,10 @@ libraryDependencies ++={
   val sparkOrg = "org.apache.spark"
   Seq(
     sparkOrg %% "spark-sql" % sparkVersion % "provided",
-    "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+    sparkOrg %% "spark-graphx" % sparkVersion % "provided",
+    "org.scalatest" %% "scalatest" % "3.0.5" % "test",
+      sparkOrg %% "spark-streaming" % sparkVersion % "provided",
+  "com.redislabs" % "spark-redis" % "2.3.0",
+  "org.scalatest" %% "scalatest" % "3.0.5" % "test"
   )
 }

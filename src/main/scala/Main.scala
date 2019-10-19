@@ -1,10 +1,21 @@
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 import datapreparation._
+import modelgraph.modelgraph
 
 object Main {
+  /**
+   * @author eren özel
+   */
 
   def main(args:Array[String]):Unit={
+    datapreparation()
+    val model = new modelgraph();
+    model.modelGraph()
+  }
+
+
+  def datapreparation():Unit ={
     val spark = SparkSession
       .builder
       .appName("datagraph")
@@ -40,5 +51,6 @@ object Main {
     spark.stop()
 
   }
+
 
 }
